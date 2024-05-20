@@ -1,0 +1,232 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 532676608 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3600), pid=40600, tid=39352
+#
+# JRE version:  (21.0+35) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (21+35-LTS-2513, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 --module-path=C:\Users\MSI\.eclipse\project5\bin;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx-swt.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.base.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.controls.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.fxml.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.graphics.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.media.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.swing.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.web.jar;C:\Users\MSI\.p2\pool\plugins\org.eclipse.fx.ide.css.jfx8_3.10.0.202303150700.jar;C:\Users\MSI\Downloads\mysql-connector-j-8.4.0\mysql-connector-j-8.4.0\mysql-connector-j-8.4.0.jar -XX:+ShowCodeDetailsInExceptionMessages -Djdk.module.main=project project/application.Main
+
+Host: 11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz, 12 cores, 31G,  Windows 11 , 64 bit Build 22621 (10.0.22621.3527)
+Time: Sun May 19 23:10:18 2024 Afr. centrale Ouest elapsed time: 0.011959 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000139844b9da0):  JavaThread "Unknown thread" [_thread_in_vm, id=39352, stack(0x000000329a100000,0x000000329a200000) (1024K)]
+
+Stack: [0x000000329a100000,0x000000329a200000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6c8d39]
+V  [jvm.dll+0x854091]
+V  [jvm.dll+0x85630e]
+V  [jvm.dll+0x8569e3]
+V  [jvm.dll+0x2809a6]
+V  [jvm.dll+0x6c5425]
+V  [jvm.dll+0x6b9e1a]
+V  [jvm.dll+0x3555ba]
+V  [jvm.dll+0x35d206]
+V  [jvm.dll+0x3adf6e]
+V  [jvm.dll+0x3ae218]
+V  [jvm.dll+0x328fcc]
+V  [jvm.dll+0x329b5b]
+V  [jvm.dll+0x81c699]
+V  [jvm.dll+0x3bb2a1]
+V  [jvm.dll+0x805688]
+V  [jvm.dll+0x44ed9e]
+V  [jvm.dll+0x4506a1]
+C  [jli.dll+0x52a3]
+C  [ucrtbase.dll+0x29333]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5aa48]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffed9127b48, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000001398683d220 WorkerThread "GC Thread#0"                     [id=34476, stack(0x000000329a200000,0x000000329a300000) (1024K)]
+  0x000001398684a990 ConcurrentGCThread "G1 Main Marker"            [id=39420, stack(0x000000329a300000,0x000000329a400000) (1024K)]
+  0x00000139a8022560 WorkerThread "G1 Conc#0"                       [id=34412, stack(0x000000329a400000,0x000000329a500000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffed889c097]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffed9198648] Heap_lock - owner thread: 0x00000139844b9da0
+
+Heap address: 0x0000000604800000, size: 8120 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 32 size 80 Howl #buckets 8 coarsen threshold 7372 Howl Bitmap #cards 1024 size 144 coarsen threshold 921 Card regions per heap region 1 cards per card region 8192
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000604800000, 0x0000000800000000)
+  region size 4096K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffed8c81939]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.008 Loaded shared library C:\Program Files\Java\jdk-21\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7ccef0000 - 0x00007ff7ccf00000 	C:\Program Files\Java\jdk-21\bin\javaw.exe
+0x00007fff6dd50000 - 0x00007fff6df67000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fff6d710000 - 0x00007fff6d7d4000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fff6b190000 - 0x00007fff6b537000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fff6b540000 - 0x00007fff6b651000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fff61be0000 - 0x00007fff61bf9000 	C:\Program Files\Java\jdk-21\bin\jli.dll
+0x00007fff616e0000 - 0x00007fff616fb000 	C:\Program Files\Java\jdk-21\bin\VCRUNTIME140.dll
+0x00007fff6bc90000 - 0x00007fff6bd42000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fff6ba80000 - 0x00007fff6bb27000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fff6bf20000 - 0x00007fff6bfc8000 	C:\WINDOWS\System32\sechost.dll
+0x00007fff6b9e0000 - 0x00007fff6ba08000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007fff6d330000 - 0x00007fff6d445000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fff6da60000 - 0x00007fff6dc0e000 	C:\WINDOWS\System32\USER32.dll
+0x00007fff6b660000 - 0x00007fff6b686000 	C:\WINDOWS\System32\win32u.dll
+0x00007fff6d840000 - 0x00007fff6d869000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fff572e0000 - 0x00007fff57573000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3527_none_270e469b73872a76\COMCTL32.dll
+0x00007fff6b070000 - 0x00007fff6b189000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fff6b690000 - 0x00007fff6b72a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fff63f00000 - 0x00007fff63f0a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fff6d650000 - 0x00007fff6d681000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007fff61bd0000 - 0x00007fff61bdc000 	C:\Program Files\Java\jdk-21\bin\vcruntime140_1.dll
+0x00007fff60910000 - 0x00007fff6099e000 	C:\Program Files\Java\jdk-21\bin\msvcp140.dll
+0x00007ffed8560000 - 0x00007ffed9273000 	C:\Program Files\Java\jdk-21\bin\server\jvm.dll
+0x00007fff6ccc0000 - 0x00007fff6cd31000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fff6a390000 - 0x00007fff6a3dd000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007fff629e0000 - 0x00007fff62a14000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fff6a310000 - 0x00007fff6a323000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007fff6a090000 - 0x00007fff6a0a8000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007fff617c0000 - 0x00007fff617ca000 	C:\Program Files\Java\jdk-21\bin\jimage.dll
+0x00007fff689a0000 - 0x00007fff68bd2000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007fff6cf50000 - 0x00007fff6d2d8000 	C:\WINDOWS\System32\combase.dll
+0x00007fff6d500000 - 0x00007fff6d5d7000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007fff61780000 - 0x00007fff617b2000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007fff6b960000 - 0x00007fff6b9d9000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007fff61010000 - 0x00007fff6102f000 	C:\Program Files\Java\jdk-21\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3527_none_270e469b73872a76;C:\Program Files\Java\jdk-21\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 --module-path=C:\Users\MSI\.eclipse\project5\bin;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx-swt.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.base.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.controls.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.fxml.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.graphics.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.media.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.swing.jar;C:\Users\MSI\Documents\javafx-sdk-21.0.2\lib\javafx.web.jar;C:\Users\MSI\.p2\pool\plugins\org.eclipse.fx.ide.css.jfx8_3.10.0.202303150700.jar;C:\Users\MSI\Downloads\mysql-connector-j-8.4.0\mysql-connector-j-8.4.0\mysql-connector-j-8.4.0.jar -XX:+ShowCodeDetailsInExceptionMessages -Djdk.module.main=project 
+java_command: project/application.Main
+java_class_path (initial): <not set>
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 4194304                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 532676608                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 8514437120                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 4194304                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 8514437120                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-21
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\MATLAB\R2009a\bin;C:\Program Files (x86)\MATLAB\R2009a\bin;C:\Program Files (x86)\MATLAB\R2009a\bin\win32;C:\Program Files\MATLAB\R2009a\bin\win64;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\composer;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MSI\scoop\shims;C:\Users\MSI\AppData\Local\Microsoft\WindowsApps;C:\Users\MSI\AppData\Roaming\npm;C:\Users\MSI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\MSI\AppData\Roaming\Composer\vendor\bin;C:\php-5.6.20;D:\Users\MSI\Documents\htdocs\xampp\php-5.6.20;C:\Program Files\mongosh\
+USERNAME=MSI
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 141 Stepping 1, GenuineIntel
+TMP=C:\Users\MSI\AppData\Local\Temp
+TEMP=C:\Users\MSI\AppData\Local\Temp
+
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.3527)
+OS uptime: 4 days 0:36 hours
+
+CPU: total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 141 stepping 1 microcode 0x26, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, clwb, avx512_vbmi2, avx512_vbmi, rdtscp, rdpid, fsrm, gfni, avx512_bitalg, f16c, pku, cet_ibt, cet_ss, avx512_ifma
+Processor Information for all 12 processors :
+  Max Mhz: 2688, Current Mhz: 2688, Mhz Limit: 2688
+
+Memory: 4k page, system-wide physical 32469M (3970M free)
+TotalPageFile size 92095M (AvailPageFile size 351M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 65M, peak: 573M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (21+35-LTS-2513) for windows-amd64 JRE (21+35-LTS-2513), built on 2023-08-09T20:25:10Z by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.

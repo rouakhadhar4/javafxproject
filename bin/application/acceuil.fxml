@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+    <!-- Navbar -->
+    <top>
+        <HBox spacing="10" style="-fx-background-color: #2a2a2a;" padding="10">
+            <Button text="Home" style="-fx-text-fill: white;" />
+            <Button text="About" style="-fx-text-fill: white;" />
+            <Button text="Services" style="-fx-text-fill: white;" />
+            <Button text="Contact" style="-fx-text-fill: white;" />
+        </HBox>
+    </top>
+    
+    <!-- Main Content -->
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <Label text="Main Content Area" style="-fx-font-size: 24px;" />
+        </VBox>
+    </center>
+    
+    <!-- Footer -->
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-background-color: #2a2a2a;" padding="10">
+            <Label text="© 2024 My Company" style="-fx-text-fill: white;" />
+        </HBox>
+    </bottom>
+</BorderPane>
+

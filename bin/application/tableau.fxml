@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainPane" prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashboardController">
+
+    <!-- Navigation bar at the top -->
+    <top>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10; -fx-background-color: #6495ED;">
+            <Region prefWidth="20" />
+            <Label onMouseClicked="#handleHome" style="-fx-text-fill: white; -fx-font-size: 14pt; -fx-cursor: hand;" text="Home" />
+            <Region prefWidth="20" />
+            <Label onMouseClicked="#handleLogin" style="-fx-text-fill: white; -fx-font-size: 14pt; -fx-cursor: hand;" text="Login" />
+            <Region prefWidth="20" />
+            <Label onMouseClicked="#handleManageTrips" style="-fx-text-fill: white; -fx-font-size: 14pt; -fx-cursor: hand;" text="Hotels" />
+            <Region prefWidth="20" />
+            <Label onMouseClicked="#handleManageBookings" style="-fx-text-fill: white; -fx-font-size: 14pt; -fx-cursor: hand;" text="Company" />
+            <Region prefWidth="20" />
+            <Label onMouseClicked="#handleReservation" style="-fx-text-fill: white; -fx-font-size: 14pt; -fx-cursor: hand;" text="Reservation" />
+             <Region prefWidth="20" />
+            <Label onMouseClicked="#handleUsersClick" style="-fx-text-fill: white; -fx-font-size: 14pt; -fx-cursor: hand;" text="users" />
+        </HBox>
+    </top>
+
+   <center>
+    <VBox alignment="CENTER" spacing="10">
+        <Label fx:id="dashboardLabel" style="-fx-font-size: 24pt; -fx-font-weight: bold;" text="Welcome to Dashboard Admin!" textFill="LIGHTSALMON" />
+        
+        <!-- Number of Hotels -->
+        <HBox alignment="CENTER" spacing="5">
+            <Label fx:id="numberOfHotelsLabel" />
+            <Label text="🏨" textFill="#c12121" /> <!-- Icon for hotels -->
+        </HBox>
+         <Label text="Number of Hotels " textFill="LIGHTSKYBLUE" />
+        
+        <!-- Number of Companies -->
+        <HBox alignment="CENTER" spacing="5">
+            <Label fx:id="numberOfCompaniesLabel" />
+            <Label text="🏢" textFill="#3f3fc9" /> <!-- Icon for companies -->
+        </HBox>
+        
+         <Label text="Number of Companies " textFill="LIGHTSKYBLUE" />
+        
+        <!-- Number of Reviews -->
+        <HBox alignment="CENTER" spacing="5">
+            <Label fx:id="numberOfReviewsLabel" />
+            <Label text="💬" textFill="#732020" /> <!-- Icon for reviews -->
+        </HBox>
+         <Label text="Number of Reviews " textFill="LIGHTSKYBLUE" />
+        
+         <HBox alignment="CENTER" spacing="5">
+         <Label fx:id="numberOfUsersLabel" />
+         <Label text="👤" textFill="#8e3f3f" />
+          </HBox>
+          <Label text="Number of users " textFill="LIGHTSKYBLUE" />
+         
+   
+        
+       
+    </VBox>
+</center>
+   
+   
+
+    <!-- Footer at the bottom -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10; -fx-background-color: #6495ED;">
+            <Label style="-fx-text-fill: white;" text="Email: admin@example.com" />
+            <Region prefWidth="20" />
+            <Label style="-fx-text-fill: white;" text="Phone: +123 456 7890" />
+            <Region prefWidth="20" />
+            <Label style="-fx-text-fill: white;" text="Address: 123 Admin St, Admin City" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
